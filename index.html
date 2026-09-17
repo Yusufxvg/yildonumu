@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>3000 Kez</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #080808;
+    color: #eee;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* AÇILIŞ */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 30px;
+}
+
+.hero-content {
+    animation: fadeIn 3s ease forwards;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 15vw, 120px);
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.sub-title {
+    margin-top: 20px;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 35px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #555;
+    animation: pulse 2s infinite;
+}
+
+/* 3000 KEZ */
+
+.words-section {
+    min-height: 180vh;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.words {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 4vw, 30px);
+    font-weight: 300;
+    color: #cfcfcf;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: appear 1.4s ease forwards;
+}
+
+/* MESAJ */
+
+.message-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 25px;
+    position: relative;
+}
+
+.message {
+    max-width: 650px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 2.5s ease;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message-line {
+    width: 40px;
+    height: 1px;
+    background: #555;
+    margin: 0 auto 35px;
+}
+
+.message h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(32px, 8vw, 52px);
+    margin-bottom: 35px;
+}
+
+.message p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(19px, 5vw, 25px);
+    line-height: 1.8;
+    color: #bdbdbd;
+}
+
+.final {
+    margin-top: 55px;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #666 !important;
+}
+
+/* ANİMASYONLAR */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%,100% {
+        opacity: .3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* TELEFON */
+
+@media (max-width: 600px) {
+
+    .words-section {
+        padding: 80px 15px;
+    }
+
+    .words {
+        gap: 6px;
+    }
+
+    .word {
+        font-size: 19px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- AÇILIŞ -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            bazı şeyler unutulmuyor
+        </div>
+
+        <h1 class="main-title">
+            3000 kez
+        </h1>
+
+        <div class="sub-title">
+            sadece görmen için
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        AŞAĞI KAYDIR
+    </div>
+
+</section>
+
+
+<!-- 3000 TEKRAR -->
+
+<section class="words-section">
+
+    <div id="words" class="words"></div>
+
+</section>
+
+
+<!-- MESAJ -->
+
+<section class="message-section">
+
+    <div id="message" class="message">
+
+        <div class="message-line"></div>
+
+        <h2>Bir yıl daha.</h2>
+
+        <p>
+            Bazı tarihler takvimde yalnızca bir gün olarak kalmıyor.
+            Bazıları, aradan ne kadar zaman geçerse geçsin,
+            insanın aklına geldiğinde aynı şeyi hissettirebiliyor.
+        </p>
+
+        <p>
+            Bugün de onlardan biri.
+            Geçmişte birlikte yaşadığımız güzel şeyleri,
+            paylaştığımız anları ve hayatımda bıraktığın izi
+            yok saymak istemedim.
+        </p>
+
+        <p>
+            Bunun senden bir şey beklediğim anlamına gelmesini istemiyorum.
+            Sadece bu tarihi unutmadığımı ve
+            bir zamanlar hayatımda ne kadar önemli bir yerin olduğunu
+            bilmeni istedim.
+        </p>
+
+        <p>
+            Belki de bazı şeylerin anlamı,
+            artık aynı yerde olmamıza bağlı değildir.
+        </p>
+
+        <p class="final">
+            yıldönümümüz kutlu olsun.
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const container = document.getElementById("words");
+const message = document.getElementById("message");
+
+const TOTAL = 3000;
+
+// 3000 adet "3000 kez"
+for (let i = 0; i < TOTAL; i++) {
+
+    const word = document.createElement("span");
+
+    word.className = "word";
+    word.textContent = "3000 kez";
+
+    // Hafif rastgele gecikme
+    word.style.animationDelay =
+        (Math.random() * 4) + "s";
+
+    container.appendChild(word);
+}
+
+
+// Bölüm görünür olduğunda başlat
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            container.style.opacity = "1";
+
+        }
+
+    });
+
+}, {
+    threshold: 0.1
+});
+
+observer.observe(container);
+
+
+// Sayfanın sonuna yaklaşınca mesajı göster
+const messageObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            setTimeout(() => {
+                message.classList.add("show");
+            }, 800);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+messageObserver.observe(message);
+
+</script>
+
+</body>
+</html>
